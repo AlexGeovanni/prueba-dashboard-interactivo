@@ -5,6 +5,7 @@ import {
   ResponsiveContainer,
   AreaChart,
   Area,
+  Legend,
 } from "recharts";
 import NotFoundChart from "./notFoundChart";
 import type { TypeHistorialCoin } from "@/api/coinHistorialChartApi";
@@ -48,6 +49,10 @@ export default function VolumeChart({ data }: Props) {
               />
 
               <Tooltip
+                formatter={(value) => [
+                  `$${value?.toLocaleString()}`,
+                  "Volumen de trading",
+                ]}
                 labelClassName="text-xs md:text-sm"
                 wrapperClassName="text-xs md:text-sm"
                 contentStyle={{
@@ -60,10 +65,11 @@ export default function VolumeChart({ data }: Props) {
                   gap: "8px",
                 }}
               />
-
+              <Legend />
               <Area
                 type="monotone"
                 dataKey="volume"
+                name="Volumen de trading"
                 stroke="#16a34a"
                 fill="rgba(22, 163, 74, 0.15)"
                 strokeWidth={1.5}

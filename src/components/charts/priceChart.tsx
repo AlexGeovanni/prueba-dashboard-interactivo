@@ -5,6 +5,7 @@ import {
   YAxis,
   Tooltip,
   ResponsiveContainer,
+  Legend,
 } from "recharts";
 import NotFoundChart from "@/components/charts/notFoundChart";
 import type { TypeHistorialCoin } from "@/api/coinHistorialChartApi";
@@ -48,6 +49,10 @@ export default function PriceChart({ data }: Props) {
               />
 
               <Tooltip
+                formatter={(value) => [
+                  `$${value?.toLocaleString()}`,
+                  "Precio",
+                ]}
                 labelClassName="text-xs md:text-sm"
                 wrapperClassName="text-xs md:text-sm"
                 contentStyle={{
@@ -60,10 +65,11 @@ export default function PriceChart({ data }: Props) {
                   gap: "8px",
                 }}
               />
-
+              <Legend />
               <Line
                 type="monotone"
                 dataKey="Price"
+                name="Precio"
                 stroke="#16a34a"
                 fill="rgba(22, 163, 74, 0.15)"
                 strokeWidth={1.5}

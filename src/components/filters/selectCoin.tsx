@@ -61,28 +61,30 @@ export default function SelectCoin() {
           />
         )}
       </button>
-      <div
-        className={`absolute z-10 py-4 top-20 border border-white/10 cursor-pointer right-0 w-full bg-zinc-800 rounded-xl transition-all ease-in-out duration-300 md:top-18 ${open ? "opacity-100 pointer-events-auto scale-100" : "pointer-events-none opacity-0 scale-90"}  `}
-      >
+      {data.length > 0 && (
         <div
-          role="listbox"
-          className="flex px-1 flex-col max-h-75 overflow-y-auto custom-scroll"
+          className={`absolute z-10 py-4 top-20 border border-white/10 cursor-pointer right-0 w-full bg-zinc-800 rounded-xl transition-all ease-in-out duration-300 md:top-18 ${open ? "opacity-100 pointer-events-auto scale-100" : "pointer-events-none opacity-0 scale-90"}  `}
         >
-          {data.map((value, index) => (
-            <button
-              key={index}
-              id={`coin-option-${index}`}
-              role="option"
-              tabIndex={-1}
-              className="cursor-pointer rounded-lg px-3 py-3 w-full hover:bg-white/10 flex items-center justify-between sm:max-w-45 sm:w-full md:py-2"
-              onClick={() => onClickChangeOpen(value)}
-            >
-              <span className="text-sm block text-start">{value.name}</span>
-              {coin?.id == value.id && <CheckIcon size={18} />}
-            </button>
-          ))}
+          <div
+            role="listbox"
+            className="flex px-1 flex-col max-h-75 overflow-y-auto custom-scroll"
+          >
+            {data.map((value, index) => (
+              <button
+                key={index}
+                id={`coin-option-${index}`}
+                role="option"
+                tabIndex={-1}
+                className="cursor-pointer rounded-lg px-3 py-3 w-full hover:bg-white/10 flex items-center justify-between sm:max-w-45 sm:w-full md:py-2"
+                onClick={() => onClickChangeOpen(value)}
+              >
+                <span className="text-sm block text-start">{value.name}</span>
+                {coin?.id == value.id && <CheckIcon size={18} />}
+              </button>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }

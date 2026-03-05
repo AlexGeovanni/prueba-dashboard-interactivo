@@ -37,17 +37,19 @@ export default function SelectDay() {
         id="day-dropdown"
         aria-haspopup="listbox"
         aria-expanded={open}
-        aria-disabled={!day}
+        aria-disabled={!coin}
         type="button"
         className={`border cursor-pointer border-white/10 rounded-xl px-4 py-3 flex gap-3 items-center justify-between w-full md:py-2`}
         onClick={() => setOpen(!open)}
         disabled={!coin}
       >
-        <span className="text-sm text-start block">{day.name ?? "---"}</span>
-        <ArrowDownIcon
-          size={20}
-          classname={`transition-all ease-in-out duration-300 ${open ? "rotate-180" : ""}`}
-        />
+        <span className="text-sm text-start block">{day.name}</span>
+        {coin && (
+          <ArrowDownIcon
+            size={20}
+            classname={`transition-all ease-in-out duration-300 ${open ? "rotate-180" : ""}`}
+          />
+        )}
       </button>
       <div
         className={`absolute z-10 py-4 top-20 border border-white/10 cursor-pointer right-0 w-full bg-zinc-800 rounded-xl transition-all ease-in-out duration-300 md:top-18 ${open ? "opacity-100 pointer-events-auto scale-100" : "pointer-events-none opacity-0 scale-90"}  `}

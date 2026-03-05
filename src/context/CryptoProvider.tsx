@@ -69,6 +69,10 @@ const CryptoProvider = ({ children }: { children: ReactNode }) => {
       try {
         const data = await coinHistorialChartApiById(coin.id, day.id);
         setDataPriceChart(data);
+        setMssg({
+          text: "Datos cargados correctamente",
+          error: false,
+        });
       } catch (error) {
         console.error(error);
         setMssg({
@@ -80,7 +84,7 @@ const CryptoProvider = ({ children }: { children: ReactNode }) => {
         setIsload(false)
         setTimeout(()=>{
           setMssg(null)
-        },1000)
+        },1500)
       }
     };
 
@@ -104,14 +108,14 @@ const CryptoProvider = ({ children }: { children: ReactNode }) => {
       } catch (error) {
         console.error("Error al obtener la lista de coins:", error);
         setMssg({
-          text: "Error al obtener la lista de coins",
+          text: "No se pudieron obtener los datos. Intenta nuevamente.",
           error: true,
         });
       } finally {
         setIsload(false);
         setTimeout(()=>{
           setMssg(null)
-        },1000)
+        },1500)
       }
     };
     fetchData();

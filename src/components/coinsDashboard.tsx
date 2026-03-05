@@ -6,7 +6,7 @@ import MoneyMarketChart from "@/components/charts/moneyMarketChart";
 
 // Este componente es el que muestra los datos de la criptomoneda seleccionada
 export default function CoinsDashboard() {
-  // Se obtiene el estado del contexto 
+  // Se obtiene el estado del contexto
   const { dataPriceChart, isLoad, coin, day, dataCoins } = useCrypto();
   return (
     <section>
@@ -25,18 +25,27 @@ export default function CoinsDashboard() {
           <div className=" h-full col-span-1 py-5 ">
             <div className="pl-15 pb-4">
               <p className="text-xl">Historial de precios</p>
+              <p className="text-sm text-zinc-400">
+                Cómo ha cambiado el precio durante el periodo seleccionado.
+              </p>
             </div>
             <PriceChart data={dataPriceChart} />
           </div>
           <div className=" h-full col-span-1 py-5">
             <div className="pl-15 pb-4">
               <p className="text-xl">Volumen de mercado</p>
+              <p className="text-sm text-zinc-400">
+                Total de transacciones realizadas en el mercado durante el periodo seleccionado.
+              </p>
             </div>
             <VolumeChart data={dataPriceChart} />
           </div>
           <div className=" h-full col-span-1 py-5">
             <div className="pl-15 pb-4">
-              <p className="text-xl">Top 10 criptomonedas del mercado</p>
+              <p className="text-xl">Top 30 criptomonedas del mercado</p>
+              <p className="text-sm text-zinc-400">
+                TOP criptomonedas con mayor capitalización de mercado.
+              </p>
             </div>
             <MoneyMarketChart data={dataCoins} />
           </div>

@@ -53,6 +53,10 @@ export default function MoneyMarketChart({ data }: Props) {
                 axisLine={false}
               />
               <Tooltip
+                formatter={(value) => [
+                  `$${value?.toLocaleString()}`,
+                  "Capitalización de mercado",
+                ]}
                 labelClassName="text-xs md:text-sm"
                 wrapperClassName="text-xs md:text-sm"
                 contentStyle={{
@@ -65,9 +69,9 @@ export default function MoneyMarketChart({ data }: Props) {
                   gap: "8px",
                 }}
               />
-              <Bar dataKey="marketCap" fill="#82ca9d" />
+              <Legend />
+              <Bar dataKey="marketCap" fill="#9c82ca" name="Capitalización de mercado" />
             </BarChart>
-            <Legend />
           </>
         ) : (
           <NotFoundChart />
