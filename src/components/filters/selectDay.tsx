@@ -31,7 +31,7 @@ export default function SelectDay() {
   return (
     <div className="relative w-full sm:max-w-35 sm:w-full" ref={refDiv}>
       <label htmlFor="day-dropdown" className="mb-1 inline-block">
-        Moneda
+        Día
       </label>
       <button
         id="day-dropdown"
