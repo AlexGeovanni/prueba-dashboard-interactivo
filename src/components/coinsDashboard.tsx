@@ -21,9 +21,9 @@ export default function CoinsDashboard() {
             <span className="text-base text-zinc-400">USD</span>
           </p>
         </div>
-        <div className=" grid xl:grid-cols-2 gap-3">
+        <div className=" grid lg:grid-cols-2 gap-3">
           <div className=" h-full col-span-1 py-5 ">
-            <div className="pl-15 pb-4">
+            <div className="pl-1 pb-4 lg:pl-15">
               <p className="text-xl">Historial de precios</p>
               <p className="text-sm text-zinc-400">
                 Cómo ha cambiado el precio durante el periodo seleccionado.
@@ -32,7 +32,7 @@ export default function CoinsDashboard() {
             <PriceChart data={dataPriceChart} />
           </div>
           <div className=" h-full col-span-1 py-5">
-            <div className="pl-15 pb-4">
+            <div className="pl-1 pb-4 lg:pl-15">
               <p className="text-xl">Volumen de mercado</p>
               <p className="text-sm text-zinc-400">
                 Total de transacciones realizadas en el mercado durante el periodo seleccionado.
@@ -41,7 +41,7 @@ export default function CoinsDashboard() {
             <VolumeChart data={dataPriceChart} />
           </div>
           <div className=" h-full col-span-1 py-5">
-            <div className="pl-15 pb-4">
+            <div className="pl-1 pb-4 lg:pl-15">
               <p className="text-xl">Top 30 criptomonedas del mercado</p>
               <p className="text-sm text-zinc-400">
                 TOP criptomonedas con mayor capitalización de mercado.

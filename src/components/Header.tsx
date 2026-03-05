@@ -4,8 +4,8 @@ import Wrapper from "./wrapper";
 
 export default function Header() {
   return (
-    <header>
-      <Wrapper classname="pt-14 px-4 2xl:px-0">
+    <header className="z-0">
+      <Wrapper classname="pt-8 px-4 md:pt-14 2xl:px-0">
         <h1 className="text-3xl font-bold mb-4">Dashboard Interactivo</h1>
         <p className="text-xl font-bold underline underline-offset-4 ">
           CoinGecko <span className="text-green-500">API</span>
