@@ -3,9 +3,12 @@
 Aplicación **React + TypeScript + Vite** que muestra un dashboard interactivo de criptomonedas usando la **API pública de CoinGecko**.  
 Incluye gráficos de historial de precios, volumen y un top de criptomonedas del mercado, con filtros por moneda y rango de días.
 
+### Video deploy
+[Video](https://drive.google.com/file/d/1PttDBWdcNv1nN2GgXGfOSRsQgUCDfeEw/view?usp=sharing)
+
 ---
 
-### 🚀 Configuración y ejecución
+### Configuración y ejecución
 
 #### **Requisitos previos**
 - **Node.js** 18+ (recomendado)
