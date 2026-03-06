@@ -3,7 +3,7 @@ import { Bar, BarChart, Legend, Tooltip, XAxis } from "recharts";
 export default function NotFoundChart() {
   return (
     <div>
-      <div className="absolute inset-0  z-10 flex items-center justify-center">
+      <div className="absolute inset-0  z-2 flex items-center justify-center">
         <div className=" h-40 rounded-xl max-w-80 w-full font-medium text-2xl flex flex-col items-center justify-center">
           Sin datos disponibles
           <span className="text-sm font-normal text-zinc-300 text-center mt-2">No pudimos obtener los datos para mostrar la gráfica.</span>
