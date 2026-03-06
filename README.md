@@ -24,10 +24,10 @@ En la raíz del proyecto:
 pnpm install
 ```
 
-### **Variables de entorno**
+#### **Variables de entorno**
 Crea un archivo `.env` en la raíz del proyecto:
-VITE_BASE_URL=https://api.coingecko.com/api/v3
-VITE_COINGECKO_API_KEY=
+- VITE_BASE_URL=https://api.coingecko.com/api/v3
+- VITE_COINGECKO_API_KEY=
 
 #### **Ejecutar en desarrollo**
 ```
