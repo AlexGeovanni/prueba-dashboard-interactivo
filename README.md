@@ -24,6 +24,11 @@ En la raíz del proyecto:
 pnpm install
 ```
 
+### **Variables de entorno**
+Crea un archivo `.env` en la raíz del proyecto:
+VITE_BASE_URL=https://api.coingecko.com/api/v3
+VITE_COINGECKO_API_KEY=
+
 #### **Ejecutar en desarrollo**
 ```
 pnpm dev
@@ -62,6 +67,14 @@ Para que los tests de `api` y `selectCoin` funcionen correctamente en Jest, es n
     - Una llamada inicial para obtener el listado de criptomonedas y el historial de la primera moneda.
     - Llamadas reactivas al cambiar la moneda o el rango de días seleccionados.
   - Los datos se transforman a estructuras tipadas (`TypeHistorialCoin`, `TypeCoin`, `TypeDay`) que luego consumen los componentes de gráficos.
+
+- **API Endpoints**
+La aplicación utiliza la API de CoinGecko.
+- GET https://api.coingecko.com/api/v3/coins/${idCoin}/market_chart?vs_currency=usd&days=${day}
+  - Obtiene la lista de criptomonedas.
+  - Capitalización de mercado para graficar.
+- GET https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=30&page=1&sparkline=false
+  - Obtiene el historial de precios y volumen para graficar.
 
 - **UI **
   - Se usan **Tailwind CSS** para estilos y un layout responsive.  
